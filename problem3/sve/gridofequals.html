@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>Vizuelna Ramka</title>
+</head>
+<body>
+<style>
+.row
+{
+	float:left;
+	clear:both;
+	width:500px;
+}
+.row div
+{
+	width:75px;
+	height:75px;
+	background-color:green;
+	float:left;
+	margin:10px;
+	padding:10px;
+}
+.row div span
+{
+	display:none;
+	text-align:center;
+}
+.row div h1
+{
+	text-align:center;
+}
+#nav{
+	width:100%;
+	height:50px;
+	
+
+}
+div ul{
+	width:70%;
+	margin:0 auto;
+}
+div li{
+	display:inline;
+	float:left;
+
+}
+div li a
+{
+	display:inline-block;
+	width:270px;
+	border-right:1px solid black;
+	text-decoration:none;
+	text-align:center;
+	line-height:50px;
+}
+div a:hover{background:blue;}
+div a:active{background:green;}
+div li:last-child a{
+	border-right:0;
+}
+#strana{
+	width:50%;
+	height:500px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:50px;
+	padding-left:200px;
+}
+</style>
+<div id="nav">
+	<ul>
+		<li>
+			<a href="titledsection.html">Prev</a>
+		</li>
+		<li>
+			<a href="blabla.html">Home</a>
+		</li>
+		<li>
+			<a href="vizuelna-ramka.html">Next</a>
+		</li>
+	</ul>
+</div>
+<div id="strana">
+<h1>Grid of equals</h1>
+<div class="row">
+	<div>
+		<span>Kockiste1</span>
+		<h1>1</h1>
+	</div>
+	<div>
+		<span>Kockiste2</span>
+		<h1>2</h1>
+	</div>
+	<div>
+		<span>Kockiste3</span>
+		<h1>3</h1>
+	</div>
+	<div>
+		<span>Kockiste4</span>
+		<h1>4</h1>
+	</div>
+</div>
+<div class="row">
+	<div>
+		<span>Kockiste5</span>
+		<h1>5</h1>
+	</div>
+	<div>
+		<span>Kockiste6</span>
+		<h1>6</h1>
+	</div>
+	<div>
+		<span>Kockiste7</span>
+		<h1>7</h1>
+	</div>
+	<div>
+		<span>Kockiste8</span>
+		<h1>8</h1>
+	</div>
+</div>
+<div class="row">
+	<div>
+		<span>Kockiste9</span>
+		<h1>9</h1>
+	</div>
+	<div>
+		<span>Kockiste10</span>
+		<h1>10</h1>
+	</div>
+	<div>
+		<span>Kockiste11</span>
+		<h1>11</h1>
+	</div>
+	<div>
+		<span>Kockiste12</span>
+		<h1>12</h1>
+	</div>
+</div>
+<div class="row">
+	<div>
+		<span>Kockiste13</span>
+		<h1>13</h1>
+	</div>
+	<div>
+		<span>Kockiste14</span>
+		<h1>14</h1>
+	</div>
+	<div>
+		<span>Kockiste15</span>
+		<h1>15</h1>
+	</div>
+	<div>
+		<span>Kockiste16</span>
+		<h1>16</h1>
+	</div>
+</div>
+
+</div>
+
+<script>
+
+function func()
+{
+	
+}
+
+$(document).ready(function(){
+	$(".row div").hover(function(){
+		$(this).find("span").toggle();
+		$(this).find("h1").toggle();
+		}
+		,function()
+		{
+			$(this).find("span").toggle();
+			$(this).find("h1").toggle();
+				
+	
+	});
+});
+
+</script>
+</body>
+</html>
+

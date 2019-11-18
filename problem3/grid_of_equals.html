@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sample</title>
+		<style type="text/css">
+			.row{
+				float: left;
+				clear: both;
+				width: 500px;
+			}
+			.row div {
+				margin: 10px;
+				background-color: #dff0d8;
+				height: 75px;
+				width: 75px;
+				padding: 10px;
+				float: left;
+			}
+			.row div:hover{
+				cursor: pointer;
+			}
+
+			.row div span{
+				display: none;
+			}
+			.row div h2{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Grid of equals</h3>
+		<div class="row">
+			<div id="tile1">
+			    <span>
+			    	TILE 1
+				</span>
+				<h2>1</h2>
+			</div>
+			<div id="tile2">
+			    <span>
+			    	TILE 2
+				</span>
+				<h2>2</h2>
+			</div>
+			<div id="tile3">
+			    <span>
+			    	TILE 3
+				</span>
+				<h2>3</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div id="tile4">
+			    <span>
+			    	TILE 4
+				</span>
+				<h2>4</h2>
+			</div>
+			<div id="tile5">
+			    <span>
+			    	TILE 5
+				</span>
+				<h2>5</h2>
+			</div>
+			<div id="tile6">
+			    <span>
+			    	TILE 6
+				</span>
+				<h2>6</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div id="tile7">
+			    <span>
+			    	TILE 7
+				</span>
+				<h2>7</h2>
+			</div>
+			<div id="tile8">
+			    <span>
+			    	TILE 8
+				</span>
+				<h2>8</h2>
+			</div>
+			<div id="tile9">
+			    <span>
+			    	TILE 9
+				</span>
+				<h2>9</h2>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.row div').hover(function(){
+					$(this).find('span').toggle();
+					$(this).find('h2').toggle();
+				}, function() {
+					$(this).find('span').toggle();
+					$(this).find('h2').toggle();
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>Tabeli</title>
+</head>
+<body>
+<style>
+form{
+width:500px;
+margin:5px;
+
+}
+label{
+display:inline-block;
+
+
+margin:5px;
+	width:80px;
+}
+#btn{
+	width:250px;
+}
+table{margin:5px;
+	margin-top:10px;
+}
+table, td ,tr ,th
+{
+	border-collapse:collapse;
+	border:1px solid black;
+}
+div
+{
+	margin-right:5px;
+	width:300px;
+	display:inline;
+	float:left;
+}
+
+</style>
+
+
+<script>
+function vmetni()
+{
+	var ime =document.getElementById("index").value;
+	var predmet =$("select").val();
+	var tableRef = document.getElementById("table1");
+	var newRow = tableRef.insertRow(tableRef.rows.length);
+
+	var novaKelija1 = newRow.insertCell(0);
+	var novaKelija2 = newRow.insertCell(1);
+	var novaKelija3 = newRow.insertCell(2);
+	
+
+	novaKelija1.innerHTML=ime;
+	novaKelija2.innerHTML=predmet;
+	novaKelija3.innerHTML="<input type='button' value='Polozi' id='id1' onclick='polozi(this)'>"+"<input type='button' value='Padni' onclick='izbrisi(this)'>";
+	
+}
+
+
+function polozi(elem)
+{	
+	var redica = $(elem.parentNode.parentNode);
+	var predmet = $(elem.parentNode).prev();
+	var kopce = $(elem);
+	var vrednost = elem.parentNode;
+	vrednost = vrednost.previousElementSibling.innerHTML;
+
+	console.log(vrednost);
+	
+	kopce.next().prop("disabled","disabled");
+
+
+	var predmet =$("select").val();
+	redica.css("background","green");		
+	var br = $("#listapolozeni li").length;
+	var flag = 0;
+	for(var i=0;i<br;i++)
+	{
+		//console.log($("#listapolozeni li")[i].innerHTML);
+		if(vrednost==$("#listapolozeni li")[i].innerHTML){
+			flag =1;
+			break;
+		}
+	}
+	if(flag==0)
+	{var x = $("#listapolozeni").append("<li>"+vrednost+"</li>");}
+	
+			
+}
+
+function izbrisi(element)
+{
+
+	var redica = element.parentNode.parentNode;
+	redica.parentNode.removeChild(redica);
+}
+
+</script>
+<div id="prv">
+<form>
+<h2> Polozi predmet </h2>
+<label>Index</label><input type="text" value="161275" id ="index"><br>
+
+<label>Predmet</label>
+<select id="select">
+	<option value="verojatnost">Verojatnost</option>
+	<option value="algoritmi">Algoritmi</option>
+	<option value="marketing">Marketing</option>
+</select><br>
+<!--
+<label>Sakam-da</label>
+<input type="radio" name="gta" id ="name" value="win">Polozam
+<input type="radio" name="gta" id ="name" value="fail">PADNAM!!!
+<br>-->
+<input type="button" onclick="vmetni();" id="btn"value="Ajde !">
+</form>
+
+<table id="table1">
+	<thead>
+		<tr>
+		<th>Index</th>
+		<th>Predmet</th>
+		<th colspan="2">END</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+</div>
+<div id="vtor">
+<h2> Polozeni predmeti</h2>
+<ol id="listapolozeni">
+</ol>
+</div>
+</body>
+</html>
+

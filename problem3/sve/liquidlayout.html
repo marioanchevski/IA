@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>Vizuelna Ramka</title>
+</head>
+<body>
+<style>
+.con{
+	width:200px;
+	height:200px;
+	float:left;
+	border:2px solid black;
+	padding:10px;
+	margin:5px;
+}
+.con div
+{
+	float:left;
+}
+#nav{
+	width:100%;
+	height:50px;
+	
+
+}
+div ul{
+	width:70%;
+	margin:0 auto;
+}
+div li{
+	display:inline;
+	float:left;
+
+}
+div li a
+{
+	display:inline-block;
+	width:270px;
+	border-right:1px solid black;
+	text-decoration:none;
+	text-align:center;
+	line-height:50px;
+}
+div a:hover{background:blue;}
+div a:active{background:green;}
+div li:last-child a{
+	border-right:0;
+}
+.con:hover{border:20px solid black;}
+</style>
+<div id="nav">
+	<ul>
+		<li>
+			<a href="vizuelna-ramka.html">Prev</a>
+		</li>
+		<li>
+			<a href="blabla.html">Home</a>
+		</li>
+		<li>
+			<a href="titledsection.html">Next</a>
+		</li>
+	</ul>
+</div>
+<h1>Content</h1>
+<h3>Nekoj glup tekst</h3>
+<div class="con">
+<h2> bababa</h2>
+<p>ashfjash</p>
+</div>
+<div class="con">
+<h2> bababa</h2>
+<p>ashfjash</p>
+</div>
+<div class="con">
+<h2> Random link generator</h2>
+<a id="random" target="_blank" href="#" > RANDOM </a>
+</div>
+<div class="con">
+<h2> bababa</h2>
+<p>ashfjash</p>
+</div>
+
+<script>
+
+$(document).ready(function(){
+	var str =""
+	 function get(){
+	var x = Math.floor(Math.random() * 3) + 1;
+	if(x===1){ str="vizuelna-ramka.html";}
+	if(x===2){str="titledsection.html";}
+	if(x===3){str="gridofequals.html";}	
+	}
+	get();
+	console.log(str);
+	$("#random").click(function(){
+		$(this).attr("href",str);
+			get();
+	});
+});
+
+
+
+</script>
+</body>
+</html>
+

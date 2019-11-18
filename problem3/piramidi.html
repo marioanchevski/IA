@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <link rel="stylesheet" href="jquery/jquery-ui.css">
+   <link rel="stylesheet" href="jquery/jquery-ui.css">
+  <script src="jquery/jquery.js"></script>
+  <script src="jquery/jquery-ui.js"></script>
+<title> Piramidi </title>
+</head>
+<body>
+<style>
+.content{
+	border:1px solid black;
+	width:300px;
+	height:100px;
+}
+.content{width:300px;background:green; padding: 5px; border:1px gray solid; font-size: 1.4em;}
+ol{list-style-type:none;}
+li{
+	border:1px solid black;
+	height:20px;
+	width:150px;
+	margin:10px;
+	padding:10px;
+}
+
+</style>
+
+
+<script>
+var pederi = [
+		{
+			value:"Toka",
+			label:"Antonio Trajkovski",
+			desc:"Solidno dete, saka dolgi esenski prosetki i ripanje vo voda vo stil bomba",
+		},
+		{
+			value:"Mace",
+			label:"Mario Ancevski",
+			desc:"Neke ptice nikad ne polete"
+		},
+		{
+			value:"Smor",
+			label:"Petarce Lazarevski",
+			desc:"Nema potreba da mu kazuvate raboti bidejki toj veke znae,dobar programer, licemer prva klasa"
+		},
+		{
+			value:"Done",
+			label:"Kristijan Donevski",
+			desc:"Ima zenska, zaspiva na matura"
+		}
+];
+$(document).ready(function(){
+	$("#low").hide();
+	var index;
+	$.each(pederi,function(index,item){
+		$(".selecta").append("<li data-index="+index+">"+item.label+"</li>")
+	});
+		
+
+		$(".selecta li").click(function(){
+
+			index = parseInt($(this).attr("data-index"));
+			show(index);
+			$("#low").show();
+			$("#high").hide();
+		});
+
+		$("#next").click(function(){
+			
+     		index = (index + 1) % pederi.length;
+     		console.log(index);
+     		show(index);
+		});
+		$("#prev").click(function(){
+			
+     		index = index -1;
+     		index = index < 0 ? pederi.length-1 : index;
+     		show(index);
+		});
+		$('#top').click(function(){
+ 			$("#low").hide();
+ 			$("#high").show();
+     	});
+     
+});
+     
+     function show(index)
+     {
+     	var item = pederi[index];
+     	$("#title").html(item.label);
+     	$("#desc").html(item.desc);
+     } 
+</script>
+<div id="high">
+<ol class="selecta">
+</ol>
+</div>
+
+<div id="low">
+	<div>
+		<input id="prev" value="prev" type="button"/>
+		<input id="top" value="top" type="button"/>
+		<input id="next" value="next" type="button"/>
+	</div>
+	<label>Title:</label>
+	<div id="title" class="content"></div>
+	<label>Desc:</label>
+	<div id="desc" class="content"></div>
+	
+</div>
+</body>
+</html>

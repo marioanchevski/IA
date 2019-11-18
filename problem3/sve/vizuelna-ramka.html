@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>Vizuelna Ramka</title>
+</head>
+<body>
+<style>
+.div2{width:300px;height:350px;border: 1px solid black;}
+#nav{
+	width:100%;
+	height:50px;
+	
+
+}
+div ul{
+	width:70%;
+	margin:0 auto;
+}
+div li{
+	display:inline;
+	float:left;
+
+}
+div li a
+{
+	display:inline-block;
+	width:270px;
+	border-right:1px solid black;
+	text-decoration:none;
+	text-align:center;
+	line-height:50px;
+}
+div a:hover{background:blue;}
+div a:active{background:green;}
+div li:last-child a{
+	border-right:0;
+}
+
+</style>
+<div id="nav">
+	<ul>
+		<li>
+			<a href="gridofequals.html">Prev</a>
+		</li>
+		<li>
+			<a href="blabla.html">Home</a>
+		</li>
+		<li>
+			<a href="liquidlayout.html">Next</a>
+		</li>
+	</ul>
+</div>
+<div id="glavno">
+<h1> Mojata Interaktivna Applikacija</h1>
+<button kopan="tab1">Stisni Majstore</button>
+<button kopan="tab2">Stisni Majstore</button>
+<button kopan="tab3">Stisni Majstore</button>
+</div>
+<div id="container">
+	<div id="tab1">
+		<h2>Naslov 1</h2>
+		<p> toka e peder</p>
+	</div>
+	<div id="tab2">
+		<h2>Naslov w1</h2>
+		<p> done e peder</p>
+	</div>
+	<div id="tab3">
+		<h2>Naslov 1321</h2>
+		<p> petar e peder</p>
+	</div>
+
+</div>
+
+<script>
+
+function func()
+{
+	
+}
+
+$(document).ready(function(){
+	$("#container").addClass("div2");
+	$("#container div").hide();
+	$("button").click(function(){
+		var prom = $(this).attr("kopan");
+		$("#container div").hide();
+		$("#"+prom).show();
+
+	});
+});
+</script>
+</body>
+</html>
+
